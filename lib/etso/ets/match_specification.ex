@@ -128,10 +128,4 @@ defmodule Etso.ETS.MatchSpecification do
   defp resolve_param_values(_params, values) when is_list(values) do
     values
   end
-
-  def list_spec(0, acc), do: {:hd, acc}
-
-  def list_spec(index, acc) do
-    list_spec(index - 1, {:tl, acc})
-  end
 end
