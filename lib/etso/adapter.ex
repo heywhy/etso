@@ -51,6 +51,7 @@ defmodule Etso.Adapter do
   @impl Ecto.Adapter
   def dumpers(:binary_id, type), do: [type, Ecto.UUID]
   def dumpers(:embed_id, type), do: [type, Ecto.UUID]
+  def dumpers(:map, type), do: [type, Etso.Ecto.MapType]
   def dumpers(_, type), do: [type]
 
   for {implementation_module, behaviour_module} <- [
